@@ -41,25 +41,19 @@ async function copyToClipboard(text) {
     await navigator.clipboard.writeText(text);
     alert("Copied:\n" + text);
   } catch (e) {
-    // fallback if clipboard blocked
     prompt("Copy this:", text);
   }
 }
 
 document.getElementById("emailBtn")?.addEventListener("click", async () => {
   if (isMobile) {
-    // mobile usually has mail app
     window.location.href =
       `mailto:${EMAIL}?subject=${encodeURIComponent("Portfolio Inquiry - Reniel Santiago")}`;
     return;
   }
 
-  // desktop: open Gmail compose (most reliable)
   const w = window.open(GMAIL_COMPOSE, "_blank", "noopener,noreferrer");
-  if (!w) {
-    // popup blocked -> copy email
-    await copyToClipboard(EMAIL);
-  }
+  if (!w) await copyToClipboard(EMAIL);
 });
 
 document.getElementById("callBtn")?.addEventListener("click", async () => {
@@ -67,8 +61,57 @@ document.getElementById("callBtn")?.addEventListener("click", async () => {
     window.location.href = "tel:" + PHONE_TEL;
     return;
   }
-  // desktop: copy phone number
   await copyToClipboard(PHONE_DISPLAY);
+});
+
+// ===== Toast + Contact form (AJAX FormSubmit) =====
+const toast = document.getElementById("toast");
+const toastClose = document.getElementById("toastClose");
+const contactForm = document.getElementById("contactForm");
+const sendBtn = document.getElementById("sendBtn");
+
+// Use the AJAX endpoint to avoid FormSubmit pages/logos
+const FORMSUBMIT_AJAX = "https://formsubmit.co/ajax/renielsantiago09@gmail.com";
+
+function showToast() {
+  toast?.classList.add("show");
+  clearTimeout(showToast._t);
+  showToast._t = setTimeout(() => toast?.classList.remove("show"), 4500);
+}
+toastClose?.addEventListener("click", () => toast?.classList.remove("show"));
+
+contactForm?.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const fd = new FormData(contactForm);
+  fd.append("_subject", "Portfolio Inquiry — Reniel G. Santiago");
+  fd.append("_captcha", "false");
+  fd.append("_template", "table");
+
+  try {
+    if (sendBtn) {
+      sendBtn.disabled = true;
+      sendBtn.textContent = "Sending...";
+    }
+
+    const res = await fetch(FORMSUBMIT_AJAX, {
+      method: "POST",
+      headers: { "Accept": "application/json" },
+      body: fd
+    });
+
+    if (!res.ok) throw new Error("Send failed");
+
+    contactForm.reset();
+    showToast();
+  } catch (err) {
+    alert("Failed to send. Please try again or use the Email button.");
+  } finally {
+    if (sendBtn) {
+      sendBtn.disabled = false;
+      sendBtn.textContent = "Send message";
+    }
+  }
 });
 
 // ========= Gallery modal (supports .png + .jpg + .jpeg) =========
@@ -80,7 +123,6 @@ const thumbsEl = document.getElementById("thumbs");
 
 const EXTENSIONS = ["png", "jpg", "jpeg"];
 
-// base path items (no extension)
 const galleries = {
   "bitsys": {
     title: "BiTSys (20)",
@@ -127,7 +169,7 @@ async function resolveImageURL(basePath){
         return url;
       }
     } catch (err) {
-      break; // host may block HEAD
+      break;
     }
   }
 
@@ -179,7 +221,6 @@ async function showImage(idx){
     return;
   }
 
-  // fallback load sequence if HEAD blocked
   const tryList = EXTENSIONS.map(ext => `${basePath}.${ext}`);
   loadImageFallback(tryList);
 }
