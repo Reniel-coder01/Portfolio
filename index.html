@@ -37,7 +37,6 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-left reveal">
-          
           <div class="hero-identity">
             <img class="hero-photo" src="images/me/Profile.png" alt="Reniel G. Santiago" />
             <div>
@@ -254,7 +253,6 @@
                 <span class="value">0981 285 0176</span>
               </a>
 
-              <!-- Reliable email on desktop (Gmail compose). -->
               <a class="contactItem"
                  href="https://mail.google.com/mail/?view=cm&fs=1&to=renielsantiago09@gmail.com&su=Portfolio%20Inquiry%20-%20Reniel%20Santiago"
                  target="_blank"
@@ -278,7 +276,6 @@
             </div>
 
             <div class="actions mt">
-              <!-- Use Gmail compose for reliability -->
               <a class="btn primary"
                  href="https://mail.google.com/mail/?view=cm&fs=1&to=renielsantiago09@gmail.com&su=Portfolio%20Inquiry%20-%20Reniel%20Santiago"
                  target="_blank"
@@ -289,23 +286,15 @@
             </div>
 
             <p class="muted tiny" style="margin-top:10px;">
-              Tip: If you want a “normal mail app”, use the Email chip in the hero (it tries mail app on mobile).
+              Tip: Use the Email chip in the hero for mail app (mobile), Gmail compose works best on desktop.
             </p>
           </div>
 
           <div class="contactCard">
             <h3>Quick message</h3>
 
-            <!-- REAL sending (no backend) -->
-            <form class="form"
-                  action="https://formsubmit.co/renielsantiago09@gmail.com"
-                  method="POST">
-
-              <input type="hidden" name="_subject" value="Portfolio Inquiry — Reniel G. Santiago">
-              <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_template" value="table">
-              <input type="hidden" name="_next" value="index.html#contact">
-
+            <!-- AJAX POST (no FormSubmit logo page) -->
+            <form class="form" id="contactForm" method="POST">
               <label>
                 <span>Your name</span>
                 <input name="name" required placeholder="Your name" />
@@ -321,10 +310,8 @@
                 <textarea name="message" required rows="5" placeholder="Write a short message..."></textarea>
               </label>
 
-              <button class="btn primary" type="submit">Send message</button>
-              <p class="muted tiny">
-                This sends directly to my Gmail (no backend). First time: FormSubmit will ask to confirm email.
-              </p>
+              <button class="btn primary" type="submit" id="sendBtn">Send message</button>
+              <p class="muted tiny">Sends directly to my email.</p>
             </form>
           </div>
         </div>
@@ -341,6 +328,18 @@
       </div>
     </div>
   </footer>
+
+  <!-- Toast Popup -->
+  <div class="toast" id="toast" aria-live="polite" aria-atomic="true">
+    <div class="toast-card">
+      <div class="toast-icon">✓</div>
+      <div>
+        <div class="toast-title">Message delivered</div>
+        <div class="toast-sub">Thanks! I’ll reply as soon as I can.</div>
+      </div>
+      <button class="toast-close" id="toastClose" aria-label="Close">✕</button>
+    </div>
+  </div>
 
   <!-- GALLERY MODAL -->
   <div class="modal" data-modal aria-hidden="true">
