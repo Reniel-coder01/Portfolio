@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reniel G. Santiago — Portfolio</title>
+  <meta name="description" content="Minimal portfolio of Reniel G. Santiago — Web Development, Basic ML, IT Support, and Design." />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Go to top">
+        <span class="logo" aria-hidden="true"></span>
+        <span>Reniel</span>
+      </a>
+
+      <nav class="navlinks" data-menu>
+        <a href="#work">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="actions">
+        <a class="btn" href="#work">View work</a>
+        <a class="btn primary" href="#contact">Hire / Contact</a>
+        <button class="btn iconbtn mobile-toggle" data-menu-toggle aria-expanded="false" aria-label="Toggle menu">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left reveal">
+          
+          <div class="hero-identity">
+            <img class="hero-photo" src="images/me/Profile.png" alt="Reniel G. Santiago" />
+            <div>
+              <h1 class="title">Reniel G. Santiago</h1>
+              <p class="subtitle">Web Developer • Basic ML • IT Support • Visual Design</p>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#work">See Projects</a>
+            <a class="btn" href="#contact">Message Me</a>
+          </div>
+
+          <div class="kpis">
+            <div class="kpi">✅ Web Apps</div>
+            <div class="kpi">🧠 Basic ML</div>
+            <div class="kpi">🛠️ Support & Design</div>
+          </div>
+        </div>
+
+        <aside class="card hero-card reveal">
+          <div class="profile">
+            <div class="avatar" aria-hidden="true">
+              <span>RG</span>
+            </div>
+            <div>
+              <h3 class="miniTitle">Quick Info</h3>
+              <p class="muted">Brgy. Zabali, Baler, Aurora</p>
+            </div>
+          </div>
+
+          <div class="mini">
+            <div class="mini-row"><span>Focus</span> <strong>Clean UI + Function</strong></div>
+            <div class="mini-row"><span>Stack</span> <strong>HTML • CSS • JS • PHP</strong></div>
+            <div class="mini-row"><span>Tools</span> <strong>Flask • Nginx</strong></div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Functional chips -->
+          <div class="hero-links">
+            <button class="chip" id="emailBtn" type="button">Email</button>
+            <button class="chip" id="callBtn" type="button">Call</button>
+            <a class="chip"
+              href="https://www.facebook.com/reniel.santiago.1460"
+              target="_blank"
+              rel="noopener noreferrer">Facebook</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Work</h2>
+          <p class="lead">Recent projects & samples (images).</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card project reveal">
+            <div class="projectTop">
+              <span class="pill"><span class="dot"></span> Web App</span>
+              <span class="count">20 imgs</span>
+            </div>
+            <h3>BiTSys</h3>
+            <p class="muted">System UI • pages • features</p>
+            <button class="btn primary" data-open-gallery="bitsys">Open gallery</button>
+          </article>
+
+          <article class="card project reveal">
+            <div class="projectTop">
+              <span class="pill"><span class="dot"></span> Web App</span>
+              <span class="count">19 imgs</span>
+            </div>
+            <h3>Enrollment System</h3>
+            <p class="muted">Workflow • forms • admin</p>
+            <button class="btn primary" data-open-gallery="enrollment">Open gallery</button>
+          </article>
+
+          <article class="card project reveal">
+            <div class="projectTop">
+              <span class="pill"><span class="dot"></span> Website</span>
+              <span class="count">6 imgs</span>
+            </div>
+            <h3>Template Design</h3>
+            <p class="muted">Layout • responsive • modern</p>
+            <button class="btn primary" data-open-gallery="template">Open gallery</button>
+          </article>
+        </div>
+
+        <div class="grid-2 mt">
+          <article class="card project reveal">
+            <div class="projectTop">
+              <span class="pill"><span class="dot"></span> PowerPoint</span>
+              <span class="count">12 imgs</span>
+            </div>
+            <h3>BiTSys.ppt</h3>
+            <p class="muted">Slide design samples</p>
+            <button class="btn" data-open-gallery="ppt-bitsys">Open gallery</button>
+          </article>
+
+          <article class="card project reveal">
+            <div class="projectTop">
+              <span class="pill"><span class="dot"></span> PowerPoint</span>
+              <span class="count">16 imgs</span>
+            </div>
+            <h3>Debriment.ppt</h3>
+            <p class="muted">Presentation style set</p>
+            <button class="btn" data-open-gallery="ppt-debriment">Open gallery</button>
+          </article>
+        </div>
+
+        <div class="grid-2 mt">
+          <article class="card project reveal">
+            <div class="projectTop">
+              <span class="pill"><span class="dot"></span> Visual Design</span>
+              <span class="count">10 imgs</span>
+            </div>
+            <h3>Posters & Infographics</h3>
+            <p class="muted">Edits • layouts • graphics</p>
+            <button class="btn" data-open-gallery="visual">Open gallery</button>
+          </article>
+
+          <article class="card project reveal">
+            <div class="projectTop">
+              <span class="pill"><span class="dot"></span> Certificates</span>
+              <span class="count">6 imgs</span>
+            </div>
+            <h3>Certifications</h3>
+            <p class="muted">Training & proof</p>
+            <button class="btn" data-open-gallery="certs">Open gallery</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Skills</h2>
+          <p class="lead">Only the essentials.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card feature reveal">
+            <span class="pill"><span class="dot"></span> Web</span>
+            <h3>HTML • CSS • JS • PHP</h3>
+            <p class="muted">Responsive UI + basic backend</p>
+          </div>
+
+          <div class="card feature reveal">
+            <span class="pill"><span class="dot"></span> ML (Basic)</span>
+            <h3>Python</h3>
+            <p class="muted">Model basics + data handling</p>
+          </div>
+
+          <div class="card feature reveal">
+            <span class="pill"><span class="dot"></span> Tools</span>
+            <h3>Flask • Nginx • Gunicorn</h3>
+            <p class="muted">Deploy / run simple apps</p>
+          </div>
+        </div>
+
+        <div class="grid-3 mt">
+          <div class="card feature reveal">
+            <span class="pill"><span class="dot"></span> Annotation</span>
+            <h3>Label Studio • Roboflow</h3>
+            <p class="muted">Dataset labeling workflows</p>
+          </div>
+
+          <div class="card feature reveal">
+            <span class="pill"><span class="dot"></span> Devices</span>
+            <h3>Raspberry Pi • Coral USB TPU</h3>
+            <p class="muted">Edge / small device setups</p>
+          </div>
+
+          <div class="card feature reveal">
+            <span class="pill"><span class="dot"></span> Support</span>
+            <h3>Wi-Fi • Printers • Design</h3>
+            <p class="muted">Fix + setup + clean visuals</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container split">
+        <div class="card testimonial reveal">
+          <p class="quote">Associate in Computer Technology</p>
+          <p class="byline">Aurora State College of Technology</p>
+        </div>
+        <div class="card testimonial reveal">
+          <p class="quote">Responsible • Willing to learn • Hard-working</p>
+          <p class="byline">Ready for projects & internships</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container card contact reveal">
+        <div class="contact-grid">
+          <div>
+            <h2>Contact</h2>
+            <p class="lead">Let’s connect.</p>
+
+            <div class="contactList">
+              <a class="contactItem" href="tel:+639812850176">
+                <span class="label">Phone</span>
+                <span class="value">0981 285 0176</span>
+              </a>
+
+              <!-- Reliable email on desktop (Gmail compose). -->
+              <a class="contactItem"
+                 href="https://mail.google.com/mail/?view=cm&fs=1&to=renielsantiago09@gmail.com&su=Portfolio%20Inquiry%20-%20Reniel%20Santiago"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                <span class="label">Email</span>
+                <span class="value">renielsantiago09@gmail.com</span>
+              </a>
+
+              <a class="contactItem"
+                 href="https://www.facebook.com/reniel.santiago.1460"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                <span class="label">Facebook</span>
+                <span class="value">Reniel Santiago</span>
+              </a>
+
+              <div class="contactItem" role="group" aria-label="Address">
+                <span class="label">Address</span>
+                <span class="value">Brgy. Zabali, Baler Aurora</span>
+              </div>
+            </div>
+
+            <div class="actions mt">
+              <!-- Use Gmail compose for reliability -->
+              <a class="btn primary"
+                 href="https://mail.google.com/mail/?view=cm&fs=1&to=renielsantiago09@gmail.com&su=Portfolio%20Inquiry%20-%20Reniel%20Santiago"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                Email me
+              </a>
+              <a class="btn" href="#work">See work</a>
+            </div>
+
+            <p class="muted tiny" style="margin-top:10px;">
+              Tip: If you want a “normal mail app”, use the Email chip in the hero (it tries mail app on mobile).
+            </p>
+          </div>
+
+          <div class="contactCard">
+            <h3>Quick message</h3>
+
+            <!-- REAL sending (no backend) -->
+            <form class="form"
+                  action="https://formsubmit.co/renielsantiago09@gmail.com"
+                  method="POST">
+
+              <input type="hidden" name="_subject" value="Portfolio Inquiry — Reniel G. Santiago">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_next" value="index.html#contact">
+
+              <label>
+                <span>Your name</span>
+                <input name="name" required placeholder="Your name" />
+              </label>
+
+              <label>
+                <span>Your email (so I can reply)</span>
+                <input type="email" name="email" required placeholder="your@email.com" />
+              </label>
+
+              <label>
+                <span>Message</span>
+                <textarea name="message" required rows="5" placeholder="Write a short message..."></textarea>
+              </label>
+
+              <button class="btn primary" type="submit">Send message</button>
+              <p class="muted tiny">
+                This sends directly to my Gmail (no backend). First time: FormSubmit will ask to confirm email.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>© <span id="year"></span> Reniel G. Santiago</div>
+      <div class="smalllinks">
+        <a href="#top">Back to top</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GALLERY MODAL -->
+  <div class="modal" data-modal aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-label="Gallery">
+      <div class="modal-head">
+        <div>
+          <h3 class="modal-title" id="galleryTitle">Gallery</h3>
+          <p class="muted tiny" id="galleryHint">Use arrows or swipe.</p>
+        </div>
+        <button class="btn iconbtn" data-close-modal aria-label="Close">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <button class="navbtn" data-prev aria-label="Previous">‹</button>
+        <figure class="viewer">
+          <img id="galleryImg" alt="Gallery image" />
+        </figure>
+        <button class="navbtn" data-next aria-label="Next">›</button>
+      </div>
+
+      <div class="modal-foot">
+        <span class="muted tiny" id="galleryCounter">1 / 1</span>
+        <div class="thumbs" id="thumbs"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/script.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
